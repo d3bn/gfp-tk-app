@@ -123,4 +123,5 @@ return [
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
     ],
 
+    'github_token' => env('GITHUB_PERSONAL_TOKEN', ''),
 ];

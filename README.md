@@ -12,14 +12,19 @@ docker run --rm --interactive --tty -v $(pwd):/app composer install && cp .env.e
 2. Run sails and access container shell to generate environment key
 
 ```
-> ./vendor/bin/sail up -d && ./vendor/bin/sail shell
-> php artisan key:generate
+./vendor/bin/sail up -d && ./vendor/bin/sail shell
 ```
 
-> There are times that you have to clean the application cache run `php artisan cache:clear`
+3. After accessing the app shell we have to generate key and clear the config
 
-3. Supply the `GITHUB_PERSONAL_TOKEN` generated from github
+```
+php artisan key:generate
+```
+
+4. Supply the `GITHUB_PERSONAL_TOKEN` generated from github
 
 ```
 GITHUB_PERSONAL_TOKEN=<github_token_here>
 ```
+
+> Don't forget to run `php artisan config:cache` to refresh the config data.

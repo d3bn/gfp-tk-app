@@ -10,7 +10,7 @@ class IssueController extends Controller
 
     public function __construct()
     {
-        $this->token = env('GITHUB_PERSONAL_TOKEN');
+        $this->token = config('app.github_token');
     }
 
     /**
